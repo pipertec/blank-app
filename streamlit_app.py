@@ -1,7 +1,8 @@
 import streamlit as st
 import random
 import time
-
+from google import genai
+from google.genai import types
 
 # Streamed response emulator
 def response_generator():
