@@ -1,7 +1,10 @@
 import streamlit as st
 import random
 import time
-import types
+from google import genai
+from google.genai import types
+
+
 client = genai.Client(api_key="AIzaSyBR4x9HaeWtdkD3u-rqLE47Mb570nOsE_I")
 # Streamed response emulator
 def response_generator():
