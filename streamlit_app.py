@@ -28,13 +28,6 @@ def response_generator():
  
 )
 
-
-    
-    for word in response.split():
-        yield word + " "
-        time.sleep(0.05)
-
-
 st.title("Advantage Software Expert")
 
 # Initialize chat history
