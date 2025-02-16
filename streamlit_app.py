@@ -19,7 +19,7 @@ def response_generator():
      
     response = client.models.generate_content(
     model="gemini-2.0-flash-lite-preview-02-05",
-    contents=[name],
+    contents=[prompt],
     config=types.GenerateContentConfig(
         max_output_tokens=1000,
         temperature=0.1,
