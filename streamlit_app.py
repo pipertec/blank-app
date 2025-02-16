@@ -2,16 +2,31 @@ import streamlit as st
 import random
 import time
 import types
-
+client = genai.Client(api_key="AIzaSyBR4x9HaeWtdkD3u-rqLE47Mb570nOsE_I")
 # Streamed response emulator
 def response_generator():
-    response = random.choice(
-        [
-            "Hello there! How can I assist you today?",
-            "Hi, human! Is there anything I can help you with?",
-            "Do you need help?",
-        ]
+    ###response = random.choice(
+       ### [
+          ###  "Hello there! How can I assist you today?",
+            ###"Hi, human! Is there anything I can help you with?",
+            ###"Do you need help?",
+        ###]
+    ###)
+
+     
+    response = client.models.generate_content(
+    model="gemini-2.0-flash-lite-preview-02-05",
+    contents=[name],
+    config=types.GenerateContentConfig(
+        max_output_tokens=1000,
+        temperature=0.1,
+        
     )
+ 
+)
+
+
+    
     for word in response.split():
         yield word + " "
         time.sleep(0.05)
