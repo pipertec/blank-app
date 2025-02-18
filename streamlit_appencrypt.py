@@ -3,7 +3,7 @@ import random
 import time
 from google import genai
 from google.genai import types
-mykey = "AIzaSyBR4x9HaeWtdkD3u-rqLE47Mb570nOsE_I"
+mykey = os.environ['MYAPI']
 
 client = genai.Client(api_key = mykey)
 
