@@ -1,1 +1,6 @@
+
+Name: myvariable
 super_secret: ${{ secrets.MYAPI }}
+run:
+
+
