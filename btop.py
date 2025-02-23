@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 import time
-import PyPDF2
+
 from google import genai
 from google.genai import types
 from PyPDF2 import PdfReader
