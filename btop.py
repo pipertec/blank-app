@@ -18,19 +18,8 @@ def get_pdf_text(pdf_docs):
         for page in pdf_reader.pages:
             text += page.extract_text()
     return text
-    
-st.title("Advantage Software Expert")
 
-# Initialize chat history
-if "messages" not in st.session_state:
-    st.session_state.messages = []
-
-# Display chat messages from history on app rerun
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
-        
-         with st.sidebar:
+st.sidebar:
         st.subheader("Your documents")
         pdf_docs = st.file_uploader(
             "Upload your Data here  in PDF format and click on 'Process'", accept_multiple_files=True, type=['pdf'])
@@ -45,6 +34,19 @@ for message in st.session_state.messages:
                     
                     st.success("Your Data has been processed successfully")
 
+    
+st.title("Advantage Software Expert")
+
+# Initialize chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+# Display chat messages from history on app rerun
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+        
+        
 # Accept user input
 if prompt := st.chat_input("What is your Advantage Software question or comment?"):
     # Add user message to chat history
