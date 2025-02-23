@@ -26,10 +26,15 @@ def get_pdf_text(pdf_docs):
         raw_text = get_pdf_text(pdf_docs)
         st.success("Your Data has been processed successfully")
 
-  
-raw_text = "You are an expert on the content attached to this chat and this chat only. If asked to give information on other topics kindly acknowledge that you are only knowledgeable about the information you have been supplied and would be glad to help with only that information. If you are asked to create correspondence or suggestions based upon the attachments or information included in this chat only please do so. Limit your responses to include only the following information:"  + get_pdf_text(pdf_docs)    
 
-    
+  
+raw_text = get_pdf_text(pdf_docs)    
+
+# Get user input for filename
+# filename = "testjoe.txt"
+# stuff = raw_text  
+# with open(filename, 'w') as file:
+        # file.write(stuff)        
             
 st.title("Advantage Software Expert")
 
