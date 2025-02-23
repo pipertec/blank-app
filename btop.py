@@ -47,7 +47,7 @@ from google.genai import types
 
 from PyPDF2 import PdfReader
 
-client = genai.Client(api_key="AIzaSyBR4x9HaeWtdkD3u-rqLE47Mb570nOsE_I")
+client = genai.Client(api_key="INSERTAPIHERE")
 
 pdf_docs = st.file_uploader("Upload your Data here  in PDF format", accept_multiple_files=True, type=['pdf'])   
             
