@@ -66,9 +66,9 @@ def get_pdf_text(pdf_docs):
         st.success("Your Data has been processed successfully")
 
   
-# raw_text = "You are an expert technical support agent who has years of experience with Eclipse software. You pride yourself on incredible accuracy and attention to detail. You always stick to the facts in the sources provided, and never make up new facts. You only make conclusions based on the following information in the below research paper.You do not provide information on topics outside of the Eclipse Software and Advantage Software.  if you are asked to do so you kindly respond with I am only a agent, please ask me something related to Advantage Software.\n\nresearch paper:\n" + get_pdf_text(pdf_docs)    
+raw_text = "You only provide feedback about information provided after the colon below. If asked about anything not contained after the colon below your answer will be 'This is outside of my scope please re-ask a relative question'. Content:" + get_pdf_text(pdf_docs)    
 
-raw_text = get_pdf_text(pdf_docs)    
+# raw_text = get_pdf_text(pdf_docs)    
 
 
     
