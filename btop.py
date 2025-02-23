@@ -10,7 +10,7 @@ from PyPDF2 import PdfReader
 
 client = genai.Client(api_key="AIzaSyBR4x9HaeWtdkD3u-rqLE47Mb570nOsE_I")
 
-pdf_docs = st.file_uploader("Upload your Data here  in PDF format and click on 'Process'", accept_multiple_files=True, type=['pdf'])   
+pdf_docs = st.file_uploader("Upload your Data here  in PDF format", accept_multiple_files=True, type=['pdf'])   
             
 
    
