@@ -18,6 +18,7 @@ st.markdown("""
         .stDeployButton {display:none;}
         .stShareButton {display:none;}
         .stForkButton {display:none;}
+        .stGithubButton {display:none;}
         footer {visibility: hidden;}
         #stDecoration {display:none;}
     </style>
