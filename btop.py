@@ -14,9 +14,9 @@ st.markdown("""
         .reportview-container {
             margin-top: -2em;
         }
-        #MainMenu {display: none;}
+        #MainMenu {visibility: hidden;}
         .stDeployButton {display:none;}
-
+        .stShareButton {display:none;}
         footer {visibility: hidden;}
         #stDecoration {display:none;}
     </style>
