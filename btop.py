@@ -3,12 +3,35 @@ import random
 import time
 import PyPDF2
 
+
+
+
+
+st.set_page_config(page_title="Page Title", layout="wide")
+
+st.markdown("""
+    <style>
+        .reportview-container {
+            margin-top: -2em;
+        }
+        #MainMenu {visibility: hidden;}
+        .stDeployButton {display:none;}
+        footer {visibility: hidden;}
+        #stDecoration {display:none;}
+    </style>
+""", unsafe_allow_html=True)
+
+
+
+
+
+
 from google import genai
 from google.genai import types
 
 from PyPDF2 import PdfReader
 
-client = genai.Client(api_key="MYKEY")
+client = genai.Client(api_key="AIzaSyBR4x9HaeWtdkD3u-rqLE47Mb570nOsE_I")
 
 pdf_docs = st.file_uploader("Upload your Data here  in PDF format", accept_multiple_files=True, type=['pdf'])   
             
@@ -26,15 +49,13 @@ def get_pdf_text(pdf_docs):
         raw_text = get_pdf_text(pdf_docs)
         st.success("Your Data has been processed successfully")
 
-
   
+# raw_text = "You are an expert technical support agent who has years of experience with Eclipse software. You pride yourself on incredible accuracy and attention to detail. You always stick to the facts in the sources provided, and never make up new facts. You only make conclusions based on the following information in the below research paper.You do not provide information on topics outside of the Eclipse Software and Advantage Software.  if you are asked to do so you kindly respond with I am only a agent, please ask me something related to Advantage Software.\n\nresearch paper:\n" + get_pdf_text(pdf_docs)    
+
 raw_text = get_pdf_text(pdf_docs)    
 
-# Get user input for filename
-# filename = "testjoe.txt"
-# stuff = raw_text  
-# with open(filename, 'w') as file:
-        # file.write(stuff)        
+
+    
             
 st.title("Advantage Software Expert")
 
