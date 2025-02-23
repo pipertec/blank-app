@@ -2,10 +2,8 @@ import streamlit as st
 import random
 import time
 import PyPDF2
-
 from google import genai
 from google.genai import types
-from dotenv import load_dotenv
 from PyPDF2 import PdfReader
 
 client = genai.Client(api_key="AIzaSyBR4x9HaeWtdkD3u-rqLE47Mb570nOsE_I")
@@ -18,21 +16,9 @@ def get_pdf_text(pdf_docs):
         for page in pdf_reader.pages:
             text += page.extract_text()
     return text
-
-st.sidebar:
-        st.subheader("Your documents")
-        pdf_docs = st.file_uploader(
+pdf_docs = st.file_uploader(
             "Upload your Data here  in PDF format and click on 'Process'", accept_multiple_files=True, type=['pdf'])
-
-        if st.button("Process"):
-            if pdf_docs is None:
-                st.error("Please upload at least one PDF file.")
-            else:
-                with st.spinner("Processing"):
-                    raw_text = get_pdf_text(pdf_docs)
-                                  
-                    
-                    st.success("Your Data has been processed successfully")
+raw_text = get_pdf_text(pdf_docs)
 
     
 st.title("Advantage Software Expert")
