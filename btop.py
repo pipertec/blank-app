@@ -26,10 +26,11 @@ def get_pdf_text(pdf_docs):
         raw_text = get_pdf_text(pdf_docs)
         st.success("Your Data has been processed successfully")
 
-
+primary_instruction = "You are an expert on the content attached to this chat and this chat only. If asked to give information on other topics kindly acknowledge that you are only knowledgeable about the information you have been supplied and would be glad to help with only that information. If you are asked to create correspondence or suggestions based upon the attachments or information included in this chat only please do so. Limit your responses to include only the following information:" 
   
 raw_text = get_pdf_text(pdf_docs)    
 
+ghandoff = primary_instruction + raw_text
     
             
 st.title("Advantage Software Expert")
@@ -58,7 +59,7 @@ if prompt := st.chat_input("What is your Advantage Software question or comment?
     with st.chat_message("assistant"):
      
      
-      response = client.models.generate_content(model="gemini-2.0-flash-lite-preview-02-05",contents=[prompt],config=types.GenerateContentConfig(max_output_tokens=1000,temperature=0.1,system_instruction=raw_text,))
+      response = client.models.generate_content(model="gemini-2.0-flash-lite-preview-02-05",contents=[prompt],config=types.GenerateContentConfig(max_output_tokens=1000,temperature=0.1,system_instruction=ghandoff,))
       st.write(response.text)
 
     st.session_state.messages.append({"role": "assistant", "content": response.text})
