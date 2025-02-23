@@ -5,18 +5,18 @@ import PyPDF2
 
 
 
-st.set_page_config(layout="wide", toolbarMode="viewer")  
 
 
-# st.set_page_config(page_title="ShawnBot", layout="wide")
+st.set_page_config(page_title="ShawnBot", layout="wide")
 
 st.markdown("""
     <style>
         .reportview-container {
             margin-top: -2em;
         }
-        #MainMenu {visibility: hidden;}
+        #MainMenu {display: none;}
         .stDeployButton {display:none;}
+
         footer {visibility: hidden;}
         #stDecoration {display:none;}
     </style>
