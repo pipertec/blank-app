@@ -22,7 +22,7 @@ def get_pdf_text(pdf_docs):
             text += page.extract_text()
     return text
     
-   raw_text = get_pdf_text(pdf_docs)      
+raw_text = get_pdf_text(pdf_docs)      
          
             
 st.title("Advantage Software Expert")
