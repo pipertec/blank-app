@@ -47,9 +47,9 @@ from google.genai import types
 
 from PyPDF2 import PdfReader
 
-client = genai.Client(api_key="INSERTAPIHERE")
+client = genai.Client(api_key="AIzaSyBR4x9HaeWtdkD3u-rqLE47Mb570nOsE_I")
 
-pdf_docs = st.file_uploader("Upload your Data here  in PDF format", accept_multiple_files=True, type=['pdf'])   
+pdf_docs = st.file_uploader("Upload your Data here in PDF format {IF YOU REMOVE A FILE AFTER UPLOADING YOU MUST REFRESH THE PAGE}", accept_multiple_files=True, type=['pdf'])   
             
 
    
@@ -65,10 +65,11 @@ def get_pdf_text(pdf_docs):
         raw_text = get_pdf_text(pdf_docs)
         st.success("Your Data has been processed successfully")
 
-  
-# raw_text = "Only extrapolate answers relevant to the information contained after the : below. If asked about anything not contained after the colon below your answer will be 'This is outside of my scope please re-ask a relative question'. Content:" + get_pdf_text(pdf_docs)    
+raw_text =  "Only the information to the right of the : and the left of the 🥷can be used to supply answers in this chat. As a professional agent you may suggest methods  from the facts supplied here to answer user questions :" + get_pdf_text(pdf_docs) + "🥷"
 
-raw_text = get_pdf_text(pdf_docs)    
+# raw_text =  "Only the information to the right of the : and the left of the 🥷can be used to supply answers in this chat. As a professional agent you never veer from the facts supplied here :" + get_pdf_text(pdf_docs) + "🥷"
+
+# raw_text = get_pdf_text(pdf_docs)    
 
 
     
@@ -100,6 +101,8 @@ if prompt := st.chat_input("What is your Advantage Software question or comment?
      
      
       response = client.models.generate_content(model="gemini-2.0-flash-lite-preview-02-05",contents=[prompt],config=types.GenerateContentConfig(max_output_tokens=1000,temperature=0.1,system_instruction=raw_text,))
+      # response = client.models.generate_content(model="gemini-2.0-flash",contents=[prompt],config=types.GenerateContentConfig(max_output_tokens=1000,temperature=0.1,system_instruction=raw_text,))
+
       st.write(response.text)
 
     st.session_state.messages.append({"role": "assistant", "content": response.text})
