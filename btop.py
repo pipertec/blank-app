@@ -1,14 +1,20 @@
 import streamlit as st
 import random
 import time
+import PyPDF2
 
 from google import genai
 from google.genai import types
+
 from PyPDF2 import PdfReader
 
 client = genai.Client(api_key="AIzaSyBR4x9HaeWtdkD3u-rqLE47Mb570nOsE_I")
 
+ pdf_docs = st.file_uploader(
+            "Upload your Data here  in PDF format and click on 'Process'", accept_multiple_files=True, type=['pdf'])   
+            
 
+   
 def get_pdf_text(pdf_docs):
     text = ""
     for pdf in pdf_docs:
@@ -16,11 +22,10 @@ def get_pdf_text(pdf_docs):
         for page in pdf_reader.pages:
             text += page.extract_text()
     return text
-pdf_docs = st.file_uploader(
-            "Upload your Data here  in PDF format and click on 'Process'", accept_multiple_files=True, type=['pdf'])
-raw_text = get_pdf_text(pdf_docs)
-
     
+   raw_text = get_pdf_text(pdf_docs)      
+         
+            
 st.title("Advantage Software Expert")
 
 # Initialize chat history
@@ -32,7 +37,11 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
         
-        
+         with st.sidebar:
+        st.subheader("Your documents")
+      
+
+   
 # Accept user input
 if prompt := st.chat_input("What is your Advantage Software question or comment?"):
     # Add user message to chat history
