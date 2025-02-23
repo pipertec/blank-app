@@ -28,7 +28,7 @@ def get_pdf_text(pdf_docs):
 
 
   
-raw_text = get_pdf_text(pdf_docs)    
+# raw_text = get_pdf_text(pdf_docs)    
 
     
             
