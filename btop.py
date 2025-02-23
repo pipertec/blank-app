@@ -21,9 +21,20 @@ def get_pdf_text(pdf_docs):
         for page in pdf_reader.pages:
             text += page.extract_text()
     return text
-    
-raw_text = get_pdf_text(pdf_docs)      
-         
+  
+    with st.spinner("Processing"):
+        raw_text = get_pdf_text(pdf_docs)
+        st.success("Your Data has been processed successfully")
+
+
+  
+raw_text = get_pdf_text(pdf_docs)    
+
+# Get user input for filename
+# filename = "testjoe.txt"
+# stuff = raw_text  
+# with open(filename, 'w') as file:
+        # file.write(stuff)        
             
 st.title("Advantage Software Expert")
 
