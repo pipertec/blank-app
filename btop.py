@@ -10,7 +10,7 @@ from PyPDF2 import PdfReader
 
 client = genai.Client(api_key="AIzaSyBR4x9HaeWtdkD3u-rqLE47Mb570nOsE_I")
 
-pdf_docs = st.file_uploader("Upload your Data here  in PDF format ", accept_multiple_files=True, type=['pdf'])   
+pdf_docs = st.file_uploader("Upload your Data here  in PDF format and click on 'Process'", accept_multiple_files=True, type=['pdf'])   
             
 
    
@@ -31,10 +31,10 @@ def get_pdf_text(pdf_docs):
 raw_text = get_pdf_text(pdf_docs)    
 
 # Get user input for filename
-# filename = "testjoe.txt"
-# stuff = raw_text  
-# with open(filename, 'w') as file:
-        # file.write(stuff)        
+filename = "testjoe.txt"
+stuff = raw_text  
+with open(filename, 'w') as file:
+        file.write(stuff)        
             
 st.title("Advantage Software Expert")
 
