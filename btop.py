@@ -3,26 +3,58 @@ import random
 import time
 import PyPDF2
 
-
-
-
-
 st.set_page_config(page_title="ShawnBot", layout="wide")
 
-st.markdown("""
-    <style>
-        .reportview-container {
-            margin-top: -2em;
-        }
-        #MainMenu {visibility: hidden;}
-        .stDeployButton {display:none;}
-        .stShareButton {display:none;}
-        .stForkButton {display:none;}
-        .stGithubButton {display:none;}
-        footer {visibility: hidden;}
-        #stDecoration {display:none;}
-    </style>
-""", unsafe_allow_html=True)
+hide_streamlit_style = """
+                <style>
+                div[data-testid="stToolbar"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                div[data-testid="stDecoration"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                div[data-testid="stStatusWidget"] {
+                visibility: hidden;
+                height: 0%;
+                position: fixed;
+                }
+                #MainMenu {
+                visibility: hidden;
+                height: 0%;
+                }
+                header {
+                visibility: hidden;
+                height: 0%;
+                }
+                footer {
+                visibility: hidden;
+                height: 0%;
+                }
+                </style>
+                """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+
+
+
+# st.markdown("""
+    # <style>
+        # .reportview-container {
+            # margin-top: -2em;
+        # }
+        # #MainMenu {visibility: hidden;}
+        # .stDeployButton {display:none;}
+        # .stShareButton {display:none;}
+        # .stForkButton {display:none;}
+        # .stGithubButton {display:none;}
+        # footer {visibility: hidden;}
+        # #stDecoration {display:none;}
+    # </style>
+# """, unsafe_allow_html=True)
 
 
 
