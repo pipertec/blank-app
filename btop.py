@@ -66,9 +66,9 @@ def get_pdf_text(pdf_docs):
         st.success("Your Data has been processed successfully")
 
   
-raw_text = "You only provide feedback about information provided after the colon below. If asked about anything not contained after the colon below your answer will be 'This is outside of my scope please re-ask a relative question'. Content:" + get_pdf_text(pdf_docs)    
+# raw_text = "Only extrapolate answers relevant to the information contained after the : below. If asked about anything not contained after the colon below your answer will be 'This is outside of my scope please re-ask a relative question'. Content:" + get_pdf_text(pdf_docs)    
 
-# raw_text = get_pdf_text(pdf_docs)    
+raw_text = get_pdf_text(pdf_docs)    
 
 
     
