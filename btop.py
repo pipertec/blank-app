@@ -30,11 +30,7 @@ def get_pdf_text(pdf_docs):
   
 raw_text = get_pdf_text(pdf_docs)    
 
-# Get user input for filename
-filename = "testjoe.txt"
-stuff = raw_text  
-with open(filename, 'w') as file:
-        file.write(stuff)        
+    
             
 st.title("Advantage Software Expert")
 
