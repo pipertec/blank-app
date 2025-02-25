@@ -65,7 +65,7 @@ def get_pdf_text(pdf_docs):
         raw_text = get_pdf_text(pdf_docs)
         st.success("Your Data has been processed successfully")
 
-raw_text =  "Only the information to the right of the 👷 and the left of the 🥷can be used to supply answers in this chat. As a professional agent you may suggest methods  from the facts supplied here to answer user questions :" + get_pdf_text(pdf_docs) + "🥷"
+raw_text =  "Only the information to the right of the 👷 and the left of the 🥷can be used to supply answers in this chat. As a professional agent you may suggest methods  from the facts supplied here to answer user questions 👷" + get_pdf_text(pdf_docs) + "🥷"
 
 # raw_text =  "Only the information to the right of the : and the left of the 🥷can be used to supply answers in this chat. As a professional agent you never veer from the facts supplied here 👷" + get_pdf_text(pdf_docs) + "🥷"
 
