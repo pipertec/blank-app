@@ -82,12 +82,18 @@ def get_pdf_text(pdf_docs):
     with st.spinner("Processing"):
         raw_text = get_pdf_text(pdf_docs)
         st.success("Your Data has been processed successfully")
+        
+        
+        
 
-# raw_text =  "Only the information to the right of the 👷 and the left of the 🥷can be used to supply answers in this chat. As a professional agent you may suggest methods  from the facts supplied here to answer user questions 👷" + get_pdf_text(pdf_docs) + "🥷"
+# raw_text =  "Only the information to the right of the 👷 and the left of the 🥷can be used to supply answers in this chat. As a professional agent you may suggest methods  from the facts supplied here to answer user 
+# questions 👷" + get_pdf_text(pdf_docs) + "🥷"
 
 # raw_text =  "Only the information to the right of the : and the left of the 🥷can be used to supply answers in this chat. As a professional agent you never veer from the facts supplied here 👷" + get_pdf_text(pdf_docs) + "🥷"
 
-raw_text = get_pdf_text(pdf_docs)    
+raw_text = "You are an expert support agent who has years of experience with Advantage software. You pride yourself on incredible accuracy and attention to detail. You always stick to the facts in the sources provided, and never make up new facts. You only make conclusions based on the following information in the below research information:\n\n" + get_pdf_text(pdf_docs) 
+
+# raw_text = get_pdf_text(pdf_docs)    
 
 
     
