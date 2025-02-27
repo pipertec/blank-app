@@ -68,7 +68,7 @@ if uploaded_files:
 
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
-            response = client.models.generate_content(model="gemini-2.0-flash", contents=[prompt], config=types.GenerateContentConfig(max_output_tokens=3000, temperature=0.1, system_instruction=raw_text,))
+            response = client.models.generate_content(model="gemini-2.0-flash", contents=[prompt], config=types.GenerateContentConfig(max_output_tokens=3000, temperature=0 , system_instruction=raw_text,))
             st.write(response.text)
 
         st.session_state.messages.append({"role": "assistant", "content": response.text})
