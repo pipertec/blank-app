@@ -42,9 +42,11 @@ if uploaded_files:
     with st.spinner("Processing"):
         pdf_text = get_pdf_text(pdf_docs) if pdf_docs else ""
         txt_text = get_txt_text(txt_files) if txt_files else ""
-        raw_text = "You are an expert support agent who has years of experience with Advantage software. You pride yourself on incredible accuracy and attention to detail. You always stick to the facts in the sources provided, and never make up new facts. You only make conclusions based on the following information in the below research information:\n\n" + pdf_text + txt_text
+        combo_text = pdf_text + txt_text
+        raw_text = "You are an expert support agent who has years of experience with Advantage software. You pride yourself on incredible accuracy and attention to detail. You always stick to the facts in the sources provided, and never make up new facts. You only make conclusions based on the following information in the below research information:\n\n" + combo_text
         st.success("Your Data has been processed successfully")
         
+    
     st.title("Advantage Software Expert")
 
     # Initialize chat history
