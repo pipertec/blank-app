@@ -31,7 +31,7 @@ if prompt := st.chat_input("What is your Advantage Software question or comment?
      
            # response = client.models.generate_content(model="gemini-2.0-flash-lite-preview-02-05",contents=[prompt],config=types.GenerateContentConfig(max_output_tokens=1000,temperature=0.1,system_instruction=sys_instruct,))
 
-      response = client.models.generate_content(model="gemini-2.0-flash",contents=[prompt],config=types.GenerateContentConfig(max_output_tokens=1000,temperature=0.1,system_instruction=sys_instruct,))
+      response = client.models.generate_content(model="gemini-2.0-flash",contents=[prompt],config=types.GenerateContentConfig(max_output_tokens=1000,temperature=1,system_instruction=sys_instruct,))
       st.write(response.text)
 
     st.session_state.messages.append({"role": "assistant", "content": response.text})
