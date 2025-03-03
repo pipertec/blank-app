@@ -10,7 +10,7 @@ from google.genai import types
 
 from PyPDF2 import PdfReader
 
-client = genai.Client(api_key="MYKEY")
+client = genai.Client(api_key="AIzaSyBR4x9HaeWtdkD3u-rqLE47Mb570nOsE_I")
 
 uploaded_files = st.file_uploader("Upload your Data here in PDF or TXT format {IF YOU REMOVE A FILE AFTER UPLOADING YOU MUST REFRESH THE PAGE}", accept_multiple_files=True, type=['pdf', 'txt'])
 
