@@ -10,7 +10,7 @@ import hashlib
 
 # Configure Gemini API
 #GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
-GOOGLE_API_KEY = AIzaSyBR4x9HaeWtdkD3u-rqLE47Mb570nOsE_I
+
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-2.0-flash')
 
