@@ -1,10 +1,4 @@
 streamlit
 google-genai
 PyPDF2
-os
-io
-pytube
-tempfile
-requests
-urllib.parse
 hashlib
